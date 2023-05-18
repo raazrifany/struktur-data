@@ -12,7 +12,7 @@ main(){
 	}
 	
 	for(i=0; i<banyak_data-1; i++){
-		for(j=0; j<banyak_data-1-i; j++){
+		for(j=0; j<banyak_data-1; j++){
 			if(data_ke[j+1]<data_ke[j]){
 				temp=data_ke[j];
 				data_ke[j]=data_ke[j+1];
