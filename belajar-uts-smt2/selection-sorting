@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+main(){
+	int quant, i, j, temp, data_ke[5];
+	
+	system("cls");
+	printf("banyak data : "); scanf("%d",&quant);
+	
+	for(i=0; i<quant; i++){
+		printf("data ke-%d : ",i+1); scanf("%d",&data_ke[i]);
+	}
+	
+	for(i=0; i<quant-1; i++){
+		for(j=i+1; j<quant; j++){
+			if(data_ke[j]<data_ke[i]){  //descending ubah jadi >
+				temp=data_ke[i];
+				data_ke[i]=data_ke[j];
+				data_ke[j]=temp;
+			}
+		}
+	}
+	
+	printf("\ndata yang sudah terurut\n");
+	for(i=0; i<quant; i++){
+		printf("%3d",data_ke[i]);
+	}
+	
+	getch();
+}
