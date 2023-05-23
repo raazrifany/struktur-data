@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+main()
+{
+	int pilih,d[12],j,n,temp,i,nim;
+	printf("NAMA	: NIKEN NURAIFAH SUHERLAN");
+	printf("\nNIM	: 10522018");
+	printf("\npengurutan selection sort dengan ascending dan discending");
+	printf("\njumlah data : ");    scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		printf("masukan data ke-%d = ",i+1);
+		scanf("%d",&d[i]);
+	}
+	printf("data yang belum terurut adalah : ");
+	for(i=0;i<n;i++)
+	{
+		printf("%d ",d[i]);
+	}
+	printf("\n\npemilihan selection sort dengan :");
+	printf("\n1. ascending");
+	printf("\n2. discending");
+	printf("\npilih 1/2 :");
+	scanf("%d",&pilih);
+	if(pilih==1)//ascending
+	{
+		for(i=0; i<n-1; i++) 
+		{
+			for(j=i+1; j<n; j++) 
+			{
+				if(d[i] > d[j]) 
+				{
+					temp = d[j];
+					d[j] = d[i];
+					d[i] = temp;
+				}
+			}
+		}
+		printf("\nSetelah di sorting secara ascending adalah : ");
+		for(i=0;i<n;i++)
+		{
+			printf("%d",d[i]);
+		}
+	}
+	else//descending
+	{
+		for (i=0; i<n-1; i++ ) 
+		{
+			for (j=i+1; j<n; j++) 
+			{
+				if (d[i] < d[j]) 
+				{
+					temp = d[j];
+					d[j] = d[i];
+					d[i] = temp;
+				}
+			}
+		}
+		printf("\nSetelah di sorting secara descending adalah : ");
+		for(i=0;i<n;i++)
+		{
+			printf("%d ",d[i]);
+		}	
+	}
+getch();
+return 0;
+}
