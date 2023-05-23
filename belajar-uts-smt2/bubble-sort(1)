@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+
+void input(void);
+void ascending(void);
+void descending(void);
+
+	int pilih, quant, i, data_ke[10], j, temp;
+main()
+{	
+	system("cls");
+	
+	printf("Nama  : Rayvanka Azrifany Nurviana Najmi");
+	printf("\nNIM   : 10522010");
+	printf("\n===============================================\n");
+	
+	printf("\nAscending / Descending [1/2] : "); scanf("%d",&pilih);
+	if(pilih == 1){
+		input();
+		ascending();
+	}else if(pilih == 2){
+		input();
+		descending();
+	}
+	
+	printf("\nData Array Terurut = \n");
+	for(i=0; i<quant; i++){
+		printf("%d ",data_ke[i]);
+	}
+	
+	getch();
+}
+
+void input(){
+	printf("Banyak data : "); scanf("%d",&quant);
+	for(i=0; i<quant; i++){
+		printf("Data ke-%d : ",i+1); scanf("%d",&data_ke[i]);
+	}
+}
+
+void ascending(){
+	for(i=0; i<quant-1; i++){
+		for(j=0; j<quant-1; j++){
+			if(data_ke[j+1] < data_ke[j]){
+				temp = data_ke[j];
+				data_ke[j] = data_ke[j+1];
+				data_ke[j+1] = temp;
+			}
+		}
+	}
+}
+
+void descending(){
+	for(i=0; i<quant-1; i++){
+		for(j=0; j<quant-1; j++){
+			if(data_ke[j+1] > data_ke[j]){
+				temp = data_ke[j];
+				data_ke[j] = data_ke[j+1];
+				data_ke[j+1] = temp;
+			}
+		}
+	}
+}
