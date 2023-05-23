@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
-
+//bubble sort
 void input(void);
 void ascending(void);
 void descending(void);
+void output(void);
 
 	int pilih, quant, i, data_ke[10], j, temp;
 main()
@@ -19,14 +20,14 @@ main()
 	if(pilih == 1){
 		input();
 		ascending();
+		output();
 	}else if(pilih == 2){
 		input();
 		descending();
-	}
-	
-	printf("\nData Array Terurut = \n");
-	for(i=0; i<quant; i++){
-		printf("%d ",data_ke[i]);
+		output();
+	}else{
+		printf("\nSilakan masukan input yang sesuai.. [1/2]");
+		printf("\nTekan Enter untuk jalankan lagi programnya..!");
 	}
 	
 	getch();
@@ -60,5 +61,12 @@ void descending(){
 				data_ke[j+1] = temp;
 			}
 		}
+	}
+}
+
+void output(){
+	printf("\nData Array Terurut = \n");
+	for(i=0; i<quant; i++){
+		printf("%d ",data_ke[i]);
 	}
 }
