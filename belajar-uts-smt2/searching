@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+main()
+{
+	int quant, i, data_ke[10], cari, j_angka=0, index[10];
+	
+	printf("Banyak data : "); scanf("%d",&quant);
+	for(i=0; i<quant; i++){
+		printf("Data ke-%d : ",i+1); scanf("%d",&data_ke[i]);
+	}
+	
+	printf("\nData yang dicari : "); scanf("%d",&cari);
+	
+	j_angka=0;
+	for(i=0; i<quant; i++){
+		if(data_ke[i] == cari){
+			index[j_angka]=i;
+			j_angka+=1;
+		}
+	}
+	
+	if(j_angka>0){
+		printf("\nData %d ditemukan",cari);
+		printf("\nData %d ditemukan %d kali",cari,j_angka);
+		printf("\nAda %d data ditemukan pada index ke : ",j_angka);
+		for(i=0; i<j_angka; i++){
+			printf("%d ",index[i]);
+		}
+	}else{
+		printf("Data tidak ditemukan");
+	}
+	
+	getch();
+}
